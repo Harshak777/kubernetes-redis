@@ -12,3 +12,17 @@ kubectl create ns redis
 ```
 kubectl get storageclass
 ```
+## Deployment: Redis nodes
+
+```
+cd storage/redis/kubernetes/
+kubectl apply -n redis -f ./redis/redis-configmap.yaml
+kubectl apply -n redis -f ./redis/redis-statefulset.yaml
+
+kubectl -n redis get pods
+kubectl -n redis get pv
+
+kubectl -n redis logs redis-0
+kubectl -n redis logs redis-1
+kubectl -n redis logs redis-2
+```
