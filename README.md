@@ -58,3 +58,9 @@ kubectl -n redis get pods -o wide
 #Verify by loggin in and checking info inside the redis-cli of the master
 info replication
 ```
+## Clean up
+
+```
+kubectl -n redis delete -f redis/redis-statefulset.yaml
+kubectl -n redis delete -f sentinel/sentinel-statefulset.yaml
+```
