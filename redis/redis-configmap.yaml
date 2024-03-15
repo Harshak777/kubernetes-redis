@@ -513,7 +513,7 @@ data:
     # The Append Only File will also be created inside this directory.
     #
     # Note that you must specify a directory here, not a file name.
-    dir ./
+    dir /data
 
     ################################# REPLICATION #################################
 
@@ -543,7 +543,7 @@ data:
     # starting the replication synchronization process, otherwise the master will
     # refuse the replica request.
     #
-    # masterauth <master-password>
+    masterauth a-very-complex-password-here
     #
     # However this is not enough if you are using Redis ACLs (for Redis version
     # 6 or greater), and the default user is not capable of running the PSYNC
@@ -1047,7 +1047,7 @@ data:
     # The requirepass is not compatible with aclfile option and the ACL LOAD
     # command, these will cause requirepass to be ignored.
     #
-    # requirepass foobared
+    requirepass a-very-complex-password-here
 
     # New users are initialized with restrictive permissions by default, via the
     # equivalent of this ACL rule 'off resetkeys -@all'. Starting with Redis 6.2, it
@@ -1390,7 +1390,7 @@ data:
     #
     # Please check https://redis.io/topics/persistence for more information.
 
-    appendonly no
+    appendonly yes
 
     # The base name of the append only file.
     #
