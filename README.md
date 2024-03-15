@@ -43,3 +43,18 @@ kubectl -n redis get pods
 kubectl -n redis get pv
 kubectl -n redis logs sentinel-0
 ```
+
+## Testing failover
+
+```
+kubectl -n redis delete pods redis-0
+
+#Check the sentinel logs
+kubectl -n redis logs sentinel-0
+
+#Check the ip of new master by getting the ips of the pods
+kubectl -n redis get pods -o wide
+
+#Verify by loggin in and checking info inside the redis-cli of the master
+info replication
+```
