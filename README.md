@@ -26,3 +26,11 @@ kubectl -n redis logs redis-0
 kubectl -n redis logs redis-1
 kubectl -n redis logs redis-2
 ```
+## Test replication status
+
+```
+kubectl -n redis exec -it redis-0 -- sh
+redis-cli 
+auth a-very-complex-password-here
+info replication
+```
