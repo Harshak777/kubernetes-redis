@@ -37,7 +37,6 @@ info replication
 ## Deployment: Redis Sentinel (3 instances)
 
 ```
-cd storage/redis/kubernetes/
 kubectl apply -n redis -f ./sentinel/sentinel-statefulset.yaml
 
 kubectl -n redis get pods
