@@ -34,3 +34,13 @@ redis-cli
 auth a-very-complex-password-here
 info replication
 ```
+## Deployment: Redis Sentinel (3 instances)
+
+```
+cd storage/redis/kubernetes/
+kubectl apply -n redis -f ./sentinel/sentinel-statefulset.yaml
+
+kubectl -n redis get pods
+kubectl -n redis get pv
+kubectl -n redis logs sentinel-0
+```
