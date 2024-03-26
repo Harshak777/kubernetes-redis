@@ -61,6 +61,7 @@ info replication
 ## Clean up
 
 ```
+kind delete cluster --name redis
 kubectl -n redis delete -f redis/redis-statefulset.yaml
 kubectl -n redis delete -f sentinel/sentinel-statefulset.yaml
 ```
